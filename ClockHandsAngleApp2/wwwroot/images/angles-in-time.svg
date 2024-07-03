@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="211.66667mm"
+   height="158.75mm"
+   viewBox="0 0 211.66668 158.74999"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="angles-in-time.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="375.5"
+     inkscape:cy="266.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1"
+     showguides="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bg"
+     transform="translate(52.916714,26.458328)">
+    <rect
+       style="fill:#3a0647;fill-opacity:1;stroke-width:0.579908"
+       id="rect1"
+       width="211.66667"
+       height="158.75"
+       x="-52.916714"
+       y="-26.458328"
+       ry="3.5123251e-06" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="matrix(2.3579477,0,0,2.3579477,-105.2249,-200.7478)">
+    <rect
+       style="fill:#d083cf;fill-opacity:1;stroke-width:0.0215024"
+       id="rect3-8"
+       width="56.017998"
+       height="0.21996203"
+       x="64.452095"
+       y="-115.82475"
+       ry="1.5801984e-08"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#d083cf;fill-opacity:1;stroke-width:0.0187899"
+       id="rect3-8-84"
+       width="13.325691"
+       height="0.70609695"
+       x="46.172264"
+       y="117.91668"
+       ry="5.0725721e-08"
+       transform="matrix(-0.56247396,0.826815,0.826815,0.56247396,0,0)" />
+    <rect
+       style="fill:#d083cf;fill-opacity:1;stroke-width:0.0153642"
+       id="rect3-8-8"
+       width="48.263714"
+       height="0.13034642"
+       x="118.82001"
+       y="-61.25758"
+       ry="9.364034e-09"
+       transform="matrix(0.83504543,0.55018099,0.57263026,-0.81981375,0,0)" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#d083cf;stroke-width:0.275318;stroke-opacity:1"
+       id="path4"
+       cx="64.716454"
+       cy="115.69364"
+       r="13.229167" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#736c94;fill-opacity:1;stroke:#736c94;stroke-width:0.264583;stroke-opacity:1"
+       x="82.722916"
+       y="112.66943"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.98449px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#736c94;fill-opacity:1;stroke:#736c94;stroke-width:0.264583;stroke-opacity:1"
+         x="82.722916"
+         y="112.66943">Angles In Time</tspan></text>
+  </g>
+  <circle
+     style="fill:#0c2363;fill-opacity:1;stroke:none;stroke-width:0.0687778;stroke-opacity:1"
+     id="path5"
+     cx="75.465424"
+     cy="65.939987"
+     r="0.66145837" />
+  <circle
+     style="fill:#0c2363;fill-opacity:1;stroke:none;stroke-width:0.0687778;stroke-opacity:1"
+     id="path5-6"
+     cx="60.973206"
+     cy="80.728371"
+     r="0.66145837" />
+  <circle
+     style="fill:#0c2363;fill-opacity:1;stroke:none;stroke-width:0.0687778;stroke-opacity:1"
+     id="path5-6-9"
+     cx="62.124367"
+     cy="73.975037"
+     r="0.66145837" />
+  <circle
+     style="fill:#0c2363;fill-opacity:1;stroke:none;stroke-width:0.0687778;stroke-opacity:1"
+     id="path5-6-9-9"
+     cx="66.71199"
+     cy="69.082443"
+     r="0.66145837" />
+</svg>

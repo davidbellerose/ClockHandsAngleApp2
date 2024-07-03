@@ -1,0 +1,158 @@
+﻿@page "/code"
+@inject IJSRuntime _jsRuntime
+
+<main class="flex-shrink-0 mt-5">
+    <div class="container py-4 px-5 mt-5">
+        <h2 class="border-1 border-bottom border-dark">The Code for Angles In Time</h2>
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col-lg-8">
+
+                <!-- PRISM NOTE: The tabs and spacing here will be matched in the html page -->
+<pre class="line-numbers">
+<code class="language-clike">
+    <!-- Inside this section, you have to replace all "<" with "&lt;" and sometimes ">" with "&gt;" -->
+
+&#64;code {
+// declare properties
+private pageModel pm = new();
+private EditContext? editContext;
+private string message = "";
+private string transformHour = "";
+private string transformMinute = "";
+
+// execute these elements when page is rendered
+protected override void OnInitialized()
+{
+    // the model object that holds the data being edited, for example as a set of properties
+    editContext = new EditContext(pm);
+
+    // call and execute the HandleSubmit method.
+    HandleSubmit();
+}
+
+private void HandleSubmit()
+{
+    try
+    {
+        if (editContext!.Validate())
+        {
+            // call the GetAngle helper method
+            var angle = GetAngle(pm.hour, pm.minute);
+
+            // create the message to show in the page
+            // alternative: message = $"The angle between the hour and minute hands is {angle} degrees.";
+            message = angle.ToString();
+        }
+    }
+    // handle any errors that may occur
+    catch (Exception ex)
+    {
+        message = ex.Message;
+    }
+}
+
+// this method is the algoritym that calculates the angle
+private decimal GetAngle(int hour, int minute)
+{
+    if (hour &#60; 0 || hour > 23 || minute &#60; 0 || minute > 59)
+    {
+        throw new ArgumentException("Invalid time entered.");
+    }
+
+    //convert 24 hour to 12 hour time
+    if (hour > 11)
+    {
+        hour = hour - 12;
+    }
+
+
+    // The minute hand moves 6 degrees each minute:  360/60 = 6
+    var minuteAngle = minute * 6;
+
+    // The hour hand moves 30 degrees each hour: 360/12 = 30
+    // The hour hand moves an addtional 6 degrees for
+    //     each addtional minute past the hour.
+    var hourAngle = (hour * 30) + (minuteAngle / 12);
+
+    // return the angle between hour and minute hands
+    var angle = Math.Abs(hourAngle - minuteAngle);
+
+    //return the inside angle
+    if (angle > 180)
+    {
+        angle = 360 - angle;
+    }
+
+    SetClockHands(hourAngle, minuteAngle);
+
+    return angle;
+}
+
+// this method draws the clock hands to the time input in the page.
+private void SetClockHands(int hDeg, int mDeg)
+{
+    transformHour = $"transform: rotate({hDeg + 90}deg);";
+    transformMinute = $"transform: rotate({mDeg + 90}deg);";
+}
+
+// the model
+public class pageModel()
+{
+    [Required]
+    [Range(0, 23, ErrorMessage = "Hour must be between 0 and 23.")]
+    public int hour { get; set; } = 3;
+
+    [Required]
+    [Range(0, 59, ErrorMessage = "Minute must be between 0 and 59.")]
+    public int minute { get; set; } = 30;
+
+}
+</code>
+</pre>
+                <!-- END PRISM CODE BLOCK -->
+
+            </div>
+            <div class="col-lg-4">
+                <h5>
+                    This code is structured using .NET Razor Pages, which will include
+                    the Model, View and Controller actions all on one page. Only the code
+                    portion is displayed here for brevity.
+                </h5>
+                <p>
+                    The first thing done was to create the global properties. The first
+                    "OnInitialized()" method will instantiate an object for our model.
+                </p>
+                <p>
+                    The next "HandleSubmit()" method retrieves the data from the form and
+                    passes the values into the "GetAngle()" method. I used a try/catch block
+                    to gracefully handle any errors.
+                </p>
+                <p>
+                    The "GetAngle()" method holds the algorythm that calculates the inner angle
+                    between the hour and minute hands. It basically converts the minutes and hours
+                    into degrees, then takes the angle between 0 or 12 noon and the position of
+                    each hand on the clock. It subracts the two to get the angle between the hands,
+                    then subtracts 360 degrees if the angle is greater than 180 degrees to get
+                    the inside or acute angle.
+                </p>
+                <p>
+                    Finally the "SetClockHands()" method redraws the hands of the clock image
+                    to represent the time entered in the form.
+                </p>
+                <h5>
+                    Please <a href="https://www.davidbellerose.com/#contact" target="_blank" contact-link" alt="Contact Me">contact me</a> if you have any questions and/or would like to discuss
+                    my skill set and qualifications.
+                </h5>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="prism.js"></script>
+
+<!-- END MAIN -->
+@code {
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     await _jsRuntime.InvokeVoidAsync("Prism.highlightAll");
+    // }
+}

@@ -1,7 +1,50 @@
-﻿@page "/"
+﻿@* @page "/"
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+Welcome to your new app. *@
+
+@page "/"
+@using System.ComponentModel.DataAnnotations;
+
+<PageTitle>Angles In Time</PageTitle>
+
+<div class="container col-xxl-8 px-4 py-1">
+    <div class="row g-5 py-1 row-cols-1 row-cols-lg-2">
+        <div class="col order-last order-lg-first">
+            <h1 class="display-5 fw-bold 1h-1 mb-3">Angles In Time</h1>
+            <h4 class="lead">Calculate the angle between the hands of a clock for any given time.</h4>
+            <ul class="fa-ul pt-2 checklist">
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>ASP.NET 8 BLAZOR</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>CSS Bootstrap Layout</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>C# Fundamentals</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>C# Models and Functions</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>C# Dom Manipulation</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>C# Try/Catch Blocks</li>
+                <li><span class="fa-li"><i class="fa-solid fa-square-check me-2"></i></span>C# Boolean Logic</li>
+            </ul>
+            <div>
+                <a type="button" class="btn btn-actions px-4 me-md-2" href="/theapp">Try It Out!</a>
+            </div>
+            <div class="fw-bold mt-5">
+                <div class="d-flex">
+                    <div class="project-icons">
+                        @* <div class="col"><img src="images/dotneticon.svg"></div> *@
+                        <img src="images/csharpicon.svg">
+                        <img src="images/html5icon.svg">
+                        <img src="images/css3icon.svg">
+                        <img src="images/sassicon.svg">
+                        <img src="images/bootstrapicon.svg">
+                        <img src="images/jsicon.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logo-image">
+            <img src="images/angles-in-time.svg" class="img-fluid center-block d-block mx-auto" width="700" height="500" alt="App Logo">
+        </div>
+    </div>
+</div>
+

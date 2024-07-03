@@ -1,30 +1,57 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">ClockHandsAngleApp2</a>
+        <a class="navbar-brand" href="">Angles In Time</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class=""><i class="fa-solid fa-bars"></i></span>
+        </button>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@* <input type="checkbox" title="Navigation menu" class="navbar-toggler" /> *@
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link active" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
         </div>
-
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link active" href="/theapp" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> The App
             </NavLink>
         </div>
-
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link active" href="/code" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> The Code
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link active" href="https://github.com/davidbellerose/ClockHandsAngleApp2" target="_blank" Match="NavLinkMatch.All">
+                <span class="" aria-hidden="true"><i class="fa-brands fa-github"></i></span>Git Repo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link active" href="https://davidbellerose.com/#about" target="_blank" Match="NavLinkMatch.All">
+                <span class="" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>About
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link active" href="https://davidbellerose.com/#contact" target="_blank" Match="NavLinkMatch.All">
+                <span class="" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>Contact
             </NavLink>
         </div>
     </nav>
 </div>
 
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

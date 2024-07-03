@@ -1,0 +1,174 @@
+﻿@page "/theapp"
+@using System.ComponentModel.DataAnnotations;
+
+<PageTitle>Angles In Time</PageTitle>
+
+<main class="flex-shrink-0 mt-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col-lg-6 border-end border-2">
+                <h1>Angles In Time:<br />A Coding Project</h1>
+                <h4 class="lead">This app returns the angle between the hour and minute hands on a clock.</h4>
+                <p>
+                    This application demonstrates the algorythm that calculates the inner angle between
+                    the hour and minute hands for the clock time entered in the form. It converts the minutes
+                    to degrees in relation to the clock circle for each clock hand, 12:00 being 0 degrees,
+                    then the algorythm returns the inner or acute angle between the hour and minute hands.
+                </p>
+                <h2 class="mt-5 border-bottom border-3">Instructions</h2>
+                <ul>
+                    <li>
+                        Enter the time for the hour hand in the hour field, between 0 and 23. 0:00 is midnight, or in military
+                        time referred to as zero hundred hours. You can use military time for the hour input.
+                    </li>
+                    <li>
+                        Enter the time for the minute hand in the minute field, between 0 and 59.
+                    </li>
+                    <li>
+                        Click on the calculate button.
+                    </li>
+                    <li>
+                        The results message will give the inner or acute angle in degrees between the hour and minute hands.
+                    </li>
+                    <li>
+                        The clock image will refresh to show the time that was entered.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h5>Enter Values</h5>
+                <EditForm EditContext="editContext" OnValidSubmit="HandleSubmit">
+                    <DataAnnotationsValidator />
+                    <div class="mb-3">
+                        <label for="hour" class="form-label">Hour</label>
+                        @* <InputNumber class="form-control" id="hour" @bind-Value="pm.hour" @bind-Value:after="HandleSubmit"></InputNumber> *@
+                        <InputNumber class="form-control" id="hour" @bind-Value="pm.hour"></InputNumber>
+                        <ValidationMessage For="() => pm.hour" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="minute" class="form-label">Minute</label>
+                        <InputNumber class="form-control" id="minute" @bind-Value="pm.minute"></InputNumber>
+                        <ValidationMessage For="() => pm.minute" />
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-actions">Calculate</button>
+                    </div>
+                </EditForm>
+                <h2 class="mt-5 border-bottom border-2">Result</h2>
+                <h4>The angle between the hour and minute hands is <strong>@message</strong> degrees.</h4>
+                <h5 id="codeLink"></h5>
+                <div class="clock">
+                    <div class="inner-clock-face"></div>
+                    <div class="hand hour-hand" style="@transformHour"></div>
+                    <div class="hand min-hand" style="@transformMinute"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+@****************************************************************************************
+
+CODE                                                                            CODE
+
+******************************************************************************************@
+
+@code {
+    // declare properties
+    private pageModel pm = new();
+    private EditContext? editContext;
+    private string message = "";
+    private string transformHour = "";
+    private string transformMinute = "";
+
+    // execute these elements when page is rendered
+    protected override void OnInitialized()
+    {
+        // the model object that holds the data being edited, for example as a set of properties
+        editContext = new EditContext(pm);
+
+        // call and execute the HandleSubmit method.
+        HandleSubmit();
+    }
+
+    private void HandleSubmit()
+    {
+        try
+        {
+            if (editContext!.Validate())
+            {
+                // call the GetAngle helper method
+                var angle = GetAngle(pm.hour, pm.minute);
+
+                // create the message to show in the page
+                // alternative: message = $"The angle between the hour and minute hands is {angle} degrees.";
+                message = angle.ToString();
+            }
+        }
+        // handle any errors that may occur
+        catch (Exception ex)
+        {
+            message = ex.Message;
+        }
+    }
+
+    // this method is the algoritym that calculates the angle
+    private decimal GetAngle(int hour, int minute)
+    {
+        if (hour < 0 || hour > 23 || minute < 0 || minute > 59)
+        {
+            throw new ArgumentException("Invalid time entered.");
+        }
+
+        //convert 24 hour to 12 hour time
+        if (hour > 11)
+        {
+            hour = hour - 12;
+        }
+
+
+        // The minute hand moves 6 degrees each minute:  360/60 = 6
+        var minuteAngle = minute * 6;
+
+        // The hour hand moves 30 degrees each hour: 360/12 = 30
+        // The hour hand moves an addtional 6 degrees for
+        //     each addtional minute past the hour.
+        var hourAngle = (hour * 30) + (minuteAngle / 12);
+
+        // return the angle between hour and minute hands
+        var angle = Math.Abs(hourAngle - minuteAngle);
+
+        //return the inside angle
+        if (angle > 180)
+        {
+            angle = 360 - angle;
+        }
+
+        SetClockHands(hourAngle, minuteAngle);
+
+        return angle;
+    }
+
+    // this method draws the clock hands to the time input in the page.
+    private void SetClockHands(int hDeg, int mDeg)
+    {
+        transformHour = $"transform: rotate({hDeg + 90}deg);";
+        transformMinute = $"transform: rotate({mDeg + 90}deg);";
+    }
+
+    // the model
+    public class pageModel()
+    {
+        [Required]
+        [Range(0, 23, ErrorMessage = "Hour must be between 0 and 23.")]
+        public int hour { get; set; } = 3;
+
+        [Required]
+        [Range(0, 59, ErrorMessage = "Minute must be between 0 and 59.")]
+        public int minute { get; set; } = 30;
+
+    }
+
+}

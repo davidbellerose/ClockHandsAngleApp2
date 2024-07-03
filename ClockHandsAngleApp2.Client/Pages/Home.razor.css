@@ -1,0 +1,19 @@
+﻿.fa-li i {
+    color: #3a0647;
+}
+
+.project-icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .project-icons img {
+        height: 50px;
+        width: auto;
+        margin: 0.5rem;
+    }
+
+.logo-image{
+    max-width: 400px;
+    max-height: auto;
+}

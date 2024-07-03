@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockHandsAngleApp2", "ClockHandsAngleApp2\ClockHandsAngleApp2.csproj", "{94936575-A234-4100-9B73-217550C19EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClockHandsAngleApp2", "ClockHandsAngleApp2\ClockHandsAngleApp2.csproj", "{94936575-A234-4100-9B73-217550C19EFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockHandsAngleApp2.Client", "ClockHandsAngleApp2.Client\ClockHandsAngleApp2.Client.csproj", "{3D90EA0D-E692-44D3-A95E-7F82504BBED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClockHandsAngleApp2.Client", "ClockHandsAngleApp2.Client\ClockHandsAngleApp2.Client.csproj", "{3D90EA0D-E692-44D3-A95E-7F82504BBED4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
