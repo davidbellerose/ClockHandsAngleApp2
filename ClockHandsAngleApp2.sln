@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockHandsAngleApp2", "ClockHandsAngleApp2\ClockHandsAngleApp2.csproj", "{94936575-A234-4100-9B73-217550C19EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockHandsAngleApp2.Client", "ClockHandsAngleApp2.Client\ClockHandsAngleApp2.Client.csproj", "{3D90EA0D-E692-44D3-A95E-7F82504BBED4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94936575-A234-4100-9B73-217550C19EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94936575-A234-4100-9B73-217550C19EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94936575-A234-4100-9B73-217550C19EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94936575-A234-4100-9B73-217550C19EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D90EA0D-E692-44D3-A95E-7F82504BBED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D90EA0D-E692-44D3-A95E-7F82504BBED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D90EA0D-E692-44D3-A95E-7F82504BBED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D90EA0D-E692-44D3-A95E-7F82504BBED4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A59AA892-B1CA-4B4F-94D6-3E03443BA71A}
+	EndGlobalSection
+EndGlobal
